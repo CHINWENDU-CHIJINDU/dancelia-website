@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Dancelia Children's Home and Foundation – A sanctuary of love, care, and opportunity for abandoned children and young mothers." />
+  <meta name="keywords" content="Dancelia, Children's Home, Nigeria, Non-profit, Foundation, Orphanage, Charity, Mbaise" />
+  <meta name="author" content="Dancelia Foundation" />
+  <title>Dancelia Children's Home & Foundation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary-color: #c53030;
+      --primary-dark: #9b2c2c;
+      --secondary-color: #f59e0b;
+      --accent-color: #10b981;
+      --text-dark: #1f2937;
+      --text-light: #6b7280;
+      --bg-light: #f8fafc;
+      --white: #ffffff;
+      --border-light: #e5e7eb;
+      --gradient-primary: linear-gradient(135deg, #c53030 0%, #9b2c2c 100%);
+      --gradient-warm: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+      --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      color: var(--text-dark);
+      background-color: var(--white);
+    }
+
+    /* Header */
+    header {
+      background: var(--gradient-primary);
+      color: var(--white);
+      padding: 4rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="hearts" patternUnits="userSpaceOnUse" width="20" height="20"><path d="M10,6 C8,2 2,2 2,8 C2,12 10,18 10,18 C10,18 18,12 18,8 C18,2 12,2 10,6 Z" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23hearts)"/></svg>') repeat;
+      opacity: 0.1;
+    }
+
+    header * {
+      position: relative;
+      z-index: 2;
+    }
+    
+    .logo-container {
+      margin-bottom: 1.5rem;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 0.5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    
+    .logo {
+      max-width: 220px;
+      height: auto;
+      display: block;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 700;
+      margin-bottom: 1rem;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
+
+    header p {
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      font-weight: 600;
+      opacity: 1;
+      max-width: 600px;
+      margin: 0 auto;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+      letter-spacing: 0.5px;
+    }
+
+    /* Navigation */
+    nav {
+      background: var(--white);
+      padding: 1rem 2rem;
+      box-shadow: var(--shadow-md);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    nav a {
+      color: var(--text-dark);
+      text-decoration: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 50px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    nav a::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: var(--gradient-primary);
+      transition: left 0.3s ease;
+      z-index: -1;
+    }
+
+    nav a:hover::before {
+      left: 0;
+    }
+
+    nav a:hover {
+      color: var(--white);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    /* Main Content */
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    section {
+      margin: 4rem 0;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 0.8s ease forwards;
+    }
+
+    section:nth-child(even) {
+      animation-delay: 0.2s;
+    }
+
+    section:nth-child(odd) {
+      animation-delay: 0.1s;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 2.5rem);
+      color: var(--primary-color);
+      margin-bottom: 2rem;
+      text-align: center;
+      position: relative;
+    }
+
+    h2::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: var(--gradient-warm);
+      margin: 1rem auto;
+      border-radius: 2px;
+    }
+
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+      color: var(--text-light);
+      line-height: 1.8;
+    }
+
+    /* Mission and Values Lists */
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    #mission ul li,
+    #values ul li,
+    #categories ul li {
+      background: var(--bg-light);
+      margin-bottom: 1rem;
+      padding: 1.5rem;
+      border-radius: 12px;
+      border-left: 4px solid var(--primary-color);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #mission ul li::before,
+    #values ul li::before,
+    #categories ul li::before {
+      content: '✨';
+      position: absolute;
+      top: 1.5rem;
+      left: 1rem;
+      font-size: 1.2rem;
+    }
+
+    #mission ul li,
+    #values ul li,
+    #categories ul li {
+      padding-left: 3.5rem;
+    }
+
+    #mission ul li:hover,
+    #values ul li:hover,
+    #categories ul li:hover {
+      background: var(--white);
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-2px);
+    }
+
+    /* Support Section */
+    #support {
+      background: var(--gradient-primary);
+      color: var(--white);
+      padding: 3rem;
+      border-radius: 20px;
+      text-align: center;
+      margin: 4rem 0;
+    }
+
+    #support h2 {
+      color: var(--white);
+    }
+
+    #support h2::after {
+      background: var(--gradient-warm);
+    }
+
+    #support p {
+      color: rgba(255,255,255,0.95);
+      font-size: 1.2rem;
+    }
+
+    .donation {
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(10px);
+      padding: 2rem;
+      border-radius: 16px;
+      margin-top: 2rem;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .donation p {
+      margin-bottom: 1rem;
+    }
+
+    .donation strong {
+      font-weight: 600;
+      color: var(--secondary-color);
+    }
+
+    .donation a {
+      color: var(--secondary-color);
+      text-decoration: none;
+      padding: 0.75rem 2rem;
+      background: rgba(245,158,11,0.2);
+      border-radius: 50px;
+      display: inline-block;
+      margin-top: 1rem;
+      transition: all 0.3s ease;
+      border: 2px solid var(--secondary-color);
+    }
+
+    .donation a:hover {
+      background: var(--secondary-color);
+      color: var(--white);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    /* Gallery */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 16px;
+      box-shadow: var(--shadow-md);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: var(--shadow-xl);
+    }
+
+    /* Testimonials */
+    .testimonial {
+      background: var(--bg-light);
+      padding: 2rem;
+      border-radius: 16px;
+      margin: 2rem 0;
+      border-left: 4px solid var(--accent-color);
+      font-style: italic;
+      position: relative;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .testimonial::before {
+      content: '"';
+      font-size: 4rem;
+      color: var(--accent-color);
+      position: absolute;
+      top: -0.5rem;
+      left: 1rem;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .testimonial::after {
+      content: '"';
+      font-size: 4rem;
+      color: var(--accent-color);
+      position: absolute;
+      bottom: -2rem;
+      right: 1rem;
+      font-family: 'Playfair Display', serif;
+    }
+
+    /* Contact */
+    .contact-info {
+      background: var(--bg-light);
+      padding: 2rem;
+      border-radius: 16px;
+      text-align: center;
+    }
+
+    .contact-info p {
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+
+    .contact-info a {
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .contact-info a:hover {
+      color: var(--primary-dark);
+      text-decoration: underline;
+    }
+    
+    /* Social Icons */
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 1.5rem;
+    }
+    
+    .social-icons a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: var(--primary-color);
+      color: white;
+      font-size: 1.5rem;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+    
+    .social-icons a:hover {
+      background: var(--primary-dark);
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--text-dark);
+      color: var(--white);
+      text-align: center;
+      padding: 2rem;
+      margin-top: 4rem;
+    }
+
+    footer p {
+      color: rgba(255,255,255,0.8);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      nav {
+        padding: 1rem;
+      }
+      
+      nav a {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+      }
+
+      main {
+        padding: 0 1rem;
+      }
+
+      section {
+        margin: 2rem 0;
+      }
+
+      #support {
+        padding: 2rem 1rem;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .testimonial {
+        padding: 1.5rem;
+      }
+      
+      .logo {
+        max-width: 180px;
+      }
+    }
+
+    /* Smooth scrolling enhancement */
+    @media (prefers-reduced-motion: no-preference) {
+      html {
+        scroll-behavior: smooth;
+      }
+    }
+
+    /* Focus styles for accessibility */
+    a:focus,
+    button:focus {
+      outline: 2px solid var(--secondary-color);
+      outline-offset: 2px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo-container">
+      <img src="WhatsApp Image 2025-06-25 at 12.15.11_8cb19669.jpg" alt="Dancelia Children's Home & Foundation Logo" class="logo">
+    </div>
+    <h1>Dancelia Children's Home & Foundation</h1>
+    <p>Honoring a legacy of compassion, sheltering lives, shaping futures.</p>
+  </header>
+
+  <nav aria-label="Main navigation">
+    <a href="#history">History</a>
+    <a href="#mission">Mission</a>
+    <a href="#values">Values</a>
+    <a href="#categories">Admissions</a>
+    <a href="#support">Support</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <main>
+    <section id="history">
+      <h2>History</h2>
+      <p>Dancelia Children's Home and Foundation is a non-profit organization founded by the children of His Royal Highness Late Eze D.U. Ihewulezi and Late Ugoeze Cecilia Ihewulezi, rulers of Okwuato Autonomous Community in Aboh Mbaise, Imo State, Nigeria.</p>
+      <p>Their legacy of taking in homeless children and offering unconditional care laid the foundation for what would become a sanctuary for children in desperate need. The name "Dancelia" is a fusion of Daniel and Cecilia, a tribute to their life of service. Officially recognized by the Federal Republic of Nigeria, the foundation is now managed by the Sisters of the Daughters of the Charity of the Most Precious Blood.</p>
+    </section>
+
+    <section id="mission">
+      <h2>Mission</h2>
+      <ul>
+        <li>Care for children from birth to 17 years without guardians.</li>
+        <li>Empower young women to avoid unplanned pregnancies.</li>
+        <li>Support pregnant women who choose life over abortion.</li>
+        <li>Collaborate with government bodies on fostering and adoption.</li>
+        <li>Educate and nurture every child under our care.</li>
+        <li>Uphold the sacredness of human life and inspire hope.</li>
+      </ul>
+    </section>
+
+    <section id="values">
+      <h2>Core Values</h2>
+      <ul>
+        <li><strong>Protection of Life:</strong> We honor every life entrusted to us.</li>
+        <li><strong>Compassion:</strong> We act with love, dignity, and respect.</li>
+        <li><strong>Foster Care:</strong> We provide safe, nurturing environments for children.</li>
+        <li><strong>Education:</strong> We invest in the future through holistic development.</li>
+      </ul>
+    </section>
+
+    <section id="categories">
+      <h2>Admissions & Care Categories</h2>
+      <ul>
+        <li>Abandoned or homeless children (0 to 17 years).</li>
+        <li>Children temporarily placed by family members under care agreements.</li>
+        <li>Unmarried expectant mothers seeking shelter until childbirth with planning agreements and guardian consent for minors.</li>
+      </ul>
+    </section>
+
+    <section id="support">
+      <h2>Support Our Mission</h2>
+      <p>Your gift—financial, material, or spiritual—makes a difference. Help us continue our mission of love, protection, and transformation.</p>
+      <div class="donation">
+        <p><strong>Donate Today</strong></p>
+        <p>Bank: Fidelity Bank</p>
+        <p>Account Number: <strong>5601247310</strong></p>
+        <p>Account Name: <strong>DANCELIA Children's Home and Foundation</strong></p>
+        <p><a href="https://wa.me/2347071150034" target="_blank" rel="noopener">
+          <i class="fab fa-whatsapp"></i> Contact via WhatsApp
+        </a></p>
+      </div>
+    </section>
+
+    <section id="gallery">
+      <h2>Photo Gallery</h2>
+      <div class="gallery">
+        <img src="WhatsApp Image 2025-06-20 at 18.17.12_e3306304.jpg" alt="Happy children posing outdoors with bright smiles at Dancelia Home" loading="lazy">
+        <img src="WhatsApp Image 2025-06-25 at 10.15.05_c90ca629.jpg" alt="Children enjoying playtime at Dancelia Home - happy kids on a merry-go-round showing the joy and care provided" loading="lazy">
+        <img src="WhatsApp Image 2025-06-25 at 10.15.04_d26414ce.jpg" alt="More children playing and smiling at Dancelia Home - demonstrating the loving environment we provide" loading="lazy">
+      </div>
+    </section>
+
+    <section id="testimonials">
+      <h2>Testimonials</h2>
+      <blockquote class="testimonial">
+        Dancelia gave me hope when I had none. I'll forever be grateful for the care and love I received. – Former Resident
+      </blockquote>
+      <blockquote class="testimonial">
+        A haven for the helpless. The foundation has truly made an impact in our community. – Local Community Leader
+      </blockquote>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Information</h2>
+      <div class="contact-info">
+        <p><strong>Email:</strong> <a href="mailto:danceliachildrens@gmail.com">danceliachildrens@gmail.com</a></p>
+        <p><strong>Phone:</strong> <a href="tel:+2347071150034">0707 115 0034</a></p>
+        <p><strong>Facebook:</strong> <a href="https://www.facebook.com/share/19KRrJLEkb/" target="_blank" rel="noopener">Dancelia Children's Home</a></p>
+        
+        <div class="social-icons">
+          <a href="https://www.facebook.com/share/19KRrJLEkb/" target="_blank" aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://wa.me/2347071150034" target="_blank" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+          <a href="mailto:danceliachildrens@gmail.com" aria-label="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <p>&copy; 2025 Dancelia Children's Home & Foundation. Built to honor a legacy of compassion and care. All rights reserved.</p>
+    <p>Contact us: 0707 115 0034 | danceliachildrens@gmail.com</p>
+  </footer>
+
+  <script>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Add intersection observer for animation triggers
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    // Observe all sections
+    document.querySelectorAll('section').forEach(section => {
+      observer.observe(section);
+    });
+
+    // Add click-to-copy functionality for bank details
+    document.addEventListener('click', function(e) {
+      if (e.target.tagName === 'STRONG' && e.target.textContent.includes('5601247310')) {
+        navigator.clipboard.writeText('5601247310').then(() => {
+          const originalText = e.target.textContent;
+          e.target.textContent = 'Copied!';
+          setTimeout(() => {
+            e.target.textContent = originalText;
+          }, 2000);
+        });
+      }
+    });
+  </script>
+</body>
+</html>
